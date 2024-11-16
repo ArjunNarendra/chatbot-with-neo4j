@@ -1,0 +1,23 @@
+<!doctype html>
+
+<head><title>Results</title> 
+    <meta charset=utf-8> </head>
+    <body onload="renderOutputs()">
+        <h1>The response by the chatbot and its graphical representation are below</h1>
+        <h2>Chatbot Response</h2>
+        {% if response != None %}
+        <p>{{response}}</p>
+        {% else %}
+        <p>No output</p>
+        {% endif %}                  
+        <h2>Graphical Representation</h2>
+        {% if iframe_url != None %}
+        <iframe
+            src={{iframe_url}}
+            style="border: 1px solid black; width: 100%; height: 75%; min-height: 400px"
+        ></iframe>
+        {% else %}
+        <p>No output</p>
+        {% endif %} 
+        <input type="button" value="Go back!" onclick="history.back()">
+    </body>
