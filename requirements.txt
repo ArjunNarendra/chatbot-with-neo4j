@@ -1,0 +1,5 @@
+flask==3.1.0
+graphistry==0.34.17
+langchain-community==0.3.7
+langchain-openai==0.2.8
+langchain-core==0.3.19
