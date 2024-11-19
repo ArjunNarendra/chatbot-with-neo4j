@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from qa_chatbot_code import chatbot 
+from backend.qa_chatbot_code import chatbot 
 
 app = Flask(__name__)
 
