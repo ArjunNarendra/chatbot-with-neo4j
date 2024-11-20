@@ -8,12 +8,12 @@ from langchain_core.prompts.prompt import PromptTemplate
 import graphistry
 
 def chatbot(query):
-    os.environ["AZURE_OPENAI_API_KEY"] = os.environ["AZURE_OPENAI_API_KEY"]
+    os.environ["AZURE_OPENAI_API_KEY"] = os.environ.get("AZURE_OPENAI_API_KEY")
     os.environ["AZURE_OPENAI_ENDPOINT"] = "https://chatbot-llm-3.openai.azure.com/"
     os.environ["OPENAI_API_VERSION"] = "2024-10-21"
     os.environ["NEO4J_URI"] = "bolt://44.201.176.30:7687"
     os.environ["NEO4J_USERNAME"] = "neo4j"
-    os.environ["NEO4J_PASSWORD"] = os.environ["NEO_4J_PASSWORD"]
+    os.environ["NEO4J_PASSWORD"] = os.environ.get("NEO_4J_PASSWORD")
 
     graph = Neo4jGraph()
     graph.refresh_schema()
