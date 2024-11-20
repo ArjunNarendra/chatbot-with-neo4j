@@ -13,6 +13,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: Production
 
     steps:
       - uses: actions/checkout@v4
@@ -32,9 +33,15 @@ jobs:
 
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       - name: Zip artifact for deployment
+        env:
+          AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPEN_AI_KEY }}
+          NEO_4J_PASSWORD: ${{ secrets.NEO4J_PASSWORD }}
         run: zip release.zip ./* -r
 
       - name: Upload artifact for deployment jobs
+        env:
+          AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPEN_AI_KEY }}
+          NEO_4J_PASSWORD: ${{ secrets.NEO4J_PASSWORD }}
         uses: actions/upload-artifact@v3
         with:
           name: python-app
