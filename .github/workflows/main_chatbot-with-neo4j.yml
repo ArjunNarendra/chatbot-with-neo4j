@@ -16,12 +16,10 @@ jobs:
     runs-on: ubuntu-latest
  
     steps:
-    - name: Make envfile
-      uses: ArjunNarendra/create-envfile@v2.0.3
-      with:
-        envkey_AZURE_OPEN_AI_KEY: ${{secrets.AZURE_OPEN_AI_KEY}}
-        envkey_NEO4J_PASSWORD: ${{ secrets.NEO4J_PASSWORD }}
-        directory: backend
+    - name: Save ENVS
+      run: |
+        python -c "import os; file = open('.env', 'w'); file.write("Hello"); file.close()"
+      shell: bash
         
   build:
     runs-on: ubuntu-latest
