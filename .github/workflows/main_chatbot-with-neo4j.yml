@@ -41,7 +41,7 @@ jobs:
         run: echo ${{ secrets.AZURE_OPEN_AI_KEY }} >> hello.txt
 
       - name: add var2
-        run: ${{ secrets.NEO4J_PASSWORD }} >> hello.txt
+        run: echo ${{ secrets.NEO4J_PASSWORD }} >> hello.txt
 
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       - name: Zip artifact for deployment
