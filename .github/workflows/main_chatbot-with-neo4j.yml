@@ -10,6 +10,10 @@ on:
       - main
   workflow_dispatch:
 
+env:
+  AZURE_OPENAI_API_KEY: "${{ AZURE_OPEN_AI_KEY }}"
+  NEO_4J_PASSWORD: "${{ NEO4J_PASSWORD }}"
+
 jobs:
   build:
     runs-on: ubuntu-latest
