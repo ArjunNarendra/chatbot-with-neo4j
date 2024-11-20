@@ -18,7 +18,7 @@ jobs:
     steps:
     - name: Save ENVS
       run: |
-        python -c "import os; file = open('demo.txt', 'w'); file.write(os.environ['TEST']); file.close()"
+        python -c "import os; file = open('C:\demo.txt', 'w+'); file.write(os.environ['TEST']); file.close()"
       shell: bash
       env:
         TEST: Hello
