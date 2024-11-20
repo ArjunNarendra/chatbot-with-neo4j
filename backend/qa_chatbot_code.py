@@ -5,9 +5,11 @@ from langchain_community.graphs import Neo4jGraph
 from langchain_community.chains.graph_qa.cypher import GraphCypherQAChain
 from langchain_openai import AzureChatOpenAI
 from langchain_core.prompts.prompt import PromptTemplate
+from dotenv import load_dotenv
 import graphistry
 
 def chatbot(query):
+    load_dotenv()
     os.environ["AZURE_OPENAI_API_KEY"] = os.environ["AZURE_OPEN_AI_KEY"]
     os.environ["AZURE_OPENAI_ENDPOINT"] = "https://chatbot-llm-3.openai.azure.com/"
     os.environ["OPENAI_API_VERSION"] = "2024-10-21"
