@@ -10,10 +10,6 @@ on:
       - main
   workflow_dispatch:
 
-env:
-  AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPEN_AI_KEY }}
-  NEO_4J_PASSWORD: ${{ secrets.NEO4J_PASSWORD }}
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -34,14 +30,14 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
         
-      - name: add text file
-        run: touch hello.txt
+      - name: add text file to store sensitive information
+        run: touch sensitive-info.txt
 
-      - name: add var
-        run: echo ${{ secrets.AZURE_OPEN_AI_KEY }} >> hello.txt
+      - name: add the Azure OpenAI key to the file
+        run: echo ${{ secrets.AZURE_OPEN_AI_KEY }} >> sensitive-info.txt
 
-      - name: add var2
-        run: echo ${{ secrets.NEO4J_PASSWORD }} >> hello.txt
+      - name: add Neo4J password to the file
+        run: echo ${{ secrets.NEO4J_PASSWORD }} >> sensitive-info.txt
 
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       - name: Zip artifact for deployment
