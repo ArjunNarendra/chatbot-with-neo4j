@@ -18,8 +18,10 @@ jobs:
     steps:
     - name: Save ENVS
       run: |
-        python -c "import os; file = open('demo.txt', 'w'); file.write("Hello"); file.close()"
+        python -c "import os; file = open('demo.txt', 'w'); file.write(TEST); file.close()"
       shell: bash
+      env:
+        TEST: Hello
         
   build:
     runs-on: ubuntu-latest
