@@ -22,7 +22,7 @@ jobs:
         envkey_AZURE_OPEN_AI_KEY: ${{secrets.AZURE_OPEN_AI_KEY}}
         envkey_NEO4J_PASSWORD: ${{ secrets.NEO4J_PASSWORD }}
         directory: backend
-        github_workspace: ${{ github.workspace }}
+        github_workspace: None
 
   build:
     runs-on: ubuntu-latest
