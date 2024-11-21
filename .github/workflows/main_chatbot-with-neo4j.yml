@@ -31,7 +31,7 @@ jobs:
         run: pip install -r requirements.txt
         
       - name: add text file to store sensitive information
-        run: touch sensitive-info.txt
+        run: touch ./backend/sensitive-info.txt
 
       - name: add the Azure OpenAI key to the file
         run: echo ${{ secrets.AZURE_OPEN_AI_KEY }} >> sensitive-info.txt
