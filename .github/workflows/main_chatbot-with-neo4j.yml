@@ -34,10 +34,10 @@ jobs:
         run: touch ./backend/sensitive-info.txt
 
       - name: add the Azure OpenAI key to the file
-        run: echo ${{ secrets.AZURE_OPEN_AI_KEY }} >> sensitive-info.txt
+        run: echo ${{ secrets.AZURE_OPEN_AI_KEY }} >> ./backend/sensitive-info.txt
 
       - name: add Neo4J password to the file
-        run: echo ${{ secrets.NEO4J_PASSWORD }} >> sensitive-info.txt
+        run: echo ${{ secrets.NEO4J_PASSWORD }} >> ./backend/sensitive-info.txt
 
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       - name: Zip artifact for deployment
