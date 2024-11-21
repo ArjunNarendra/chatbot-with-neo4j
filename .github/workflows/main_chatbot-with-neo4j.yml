@@ -71,6 +71,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
+          package: release.zip
           app-name: 'chatbot-with-neo4j'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9C83380867D24066980D411EAD34B888 }}
