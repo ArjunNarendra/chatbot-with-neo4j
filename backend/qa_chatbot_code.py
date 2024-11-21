@@ -8,7 +8,7 @@ from langchain_core.prompts.prompt import PromptTemplate
 import graphistry
 
 def chatbot(query):
-    with open('../sensitive-info.txt') as f:
+    with open('sensitive-info.txt') as f:
         azure_open_ai_key = f.readline().strip('\n')
         neo4j_password = f.readline()
         
